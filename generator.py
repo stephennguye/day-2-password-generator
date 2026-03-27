@@ -1,18 +1,18 @@
 import string
 import random
 
-character_list = ""
+
 
 def character_options():
-    print("Choose the character types for the password")
-    print('''
-          1. Letters
-          2. Digits
-          3. Special characters
-          4. Done''')
+    print('''Choose the character types for the password
+            1. Letters
+            2. Digits
+            3. Special characters
+            4. Done''')
 
 def choose_character_types():
-    global character_list
+    character_list = ""
+
     while True:
         number = int(input("Choose a number (1-4): "))
 
@@ -26,8 +26,10 @@ def choose_character_types():
             break
         else:
             print("Invalid number bro. Try again")
+    
+    return character_list
 
-def password_generation():
+def password_generation(character_list, password_length):
     if not character_list:
         print("You must choose at least one character type")
         return
@@ -41,6 +43,6 @@ def password_generation():
 if __name__ == "__main__":
     password_length = int(input("Enter the length of your desired password: "))
     character_options()
-    choose_character_types()
-    password_generation()
+    character_list = choose_character_types()
+    password = password_generation(character_list, password_length)
     
