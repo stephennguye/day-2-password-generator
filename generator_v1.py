@@ -1,8 +1,6 @@
 import string
 import random
 
-
-
 def character_options():
     print('''Choose the character types for the password
             1. Letters
